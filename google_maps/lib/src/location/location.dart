@@ -59,7 +59,7 @@ class _LocationState extends State<Location> {
       desiredAccuracy: LocationAccuracy.high,);
 
     setState(() {
-      
+      cordinates ='Let : ${position.latitude}'
     });
 
 
