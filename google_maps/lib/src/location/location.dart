@@ -10,9 +10,20 @@ class Location extends StatefulWidget {
 
 class _LocationState extends State<Location> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  Future<void> _currentLocation ()async
+  {
+    
+  }
+
+
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
     );
   }
 }
