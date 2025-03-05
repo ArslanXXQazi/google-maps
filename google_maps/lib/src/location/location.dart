@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 
 class Location extends StatefulWidget {
@@ -17,6 +18,10 @@ class _LocationState extends State<Location> {
 
   Future<void> _currentLocation ()async
   {
+    bool serviceEnable;
+    LocationPermission permission;
+
+
     
   }
 
