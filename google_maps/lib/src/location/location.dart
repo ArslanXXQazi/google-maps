@@ -21,8 +21,7 @@ class _LocationState extends State<Location> {
     bool serviceEnable;
     LocationPermission permission;
 
-
-    
+    serviceEnable = await Geolocator.isLocationServiceEnabled();
   }
 
 
