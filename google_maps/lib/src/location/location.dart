@@ -10,6 +10,9 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
+
+  String cordinates='';
+
   @override
   void initState() {
     // TODO: implement initState
@@ -38,7 +41,9 @@ class _LocationState extends State<Location> {
         permission= await Geolocator.requestPermission();
         if(permission==LocationPermission.denied)
           {
-            
+            setState(() {
+              cordinates='Loc';
+            });
           }
       }
 
