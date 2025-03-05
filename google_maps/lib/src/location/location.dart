@@ -42,7 +42,7 @@ class _LocationState extends State<Location> {
         if(permission==LocationPermission.denied)
           {
             setState(() {
-              cordinates='Loc';
+              cordinates='Location Perimission Denied';
             });
           }
       }
