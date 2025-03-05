@@ -56,8 +56,11 @@ class _LocationState extends State<Location> {
       }
 
     Position position= await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high
-    );
+      desiredAccuracy: LocationAccuracy.high,);
+
+    setState(() {
+      
+    });
 
 
 
