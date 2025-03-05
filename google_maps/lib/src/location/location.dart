@@ -32,7 +32,11 @@ class _LocationState extends State<Location> {
       }
 
     permission= await Geolocator.checkPermission();
-    
+
+    if(permission==LocationPermission.denied)
+      {
+        
+      }
 
 
 
