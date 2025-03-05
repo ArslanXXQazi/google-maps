@@ -12,11 +12,14 @@ class Location extends StatefulWidget {
 class _LocationState extends State<Location> {
 
   String cordinates='';
+  double lat=0;
+  double long=0;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    _currentLocation();
   }
 
   Future<void> _currentLocation ()async
@@ -59,6 +62,8 @@ class _LocationState extends State<Location> {
       desiredAccuracy: LocationAccuracy.high,);
 
     setState(() {
+      lat=position.latitude;
+      long=position.longitude;
       cordinates ='Let : ${position.latitude}, lan : ${position.longitude}';
     });
 
