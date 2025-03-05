@@ -47,7 +47,10 @@ class _LocationState extends State<Location> {
           }
       }
 
-    if()
+    if(permission== LocationPermission.deniedForever)
+      {
+        
+      }
 
 
 
