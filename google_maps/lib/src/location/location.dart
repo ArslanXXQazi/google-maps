@@ -22,6 +22,13 @@ class _LocationState extends State<Location> {
     LocationPermission permission;
 
     serviceEnable = await Geolocator.isLocationServiceEnabled();
+
+    if(!serviceEnable)
+      {
+       // _cordinates="blbvcjklbvsjkvb";
+      }
+
+
   }
 
 
