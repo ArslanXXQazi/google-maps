@@ -35,7 +35,7 @@ class _LocationState extends State<Location> {
 
     if(permission==LocationPermission.denied)
       {
-        
+        permission= await Geolocator.requestPermission();
       }
 
 
