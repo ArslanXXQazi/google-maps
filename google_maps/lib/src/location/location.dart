@@ -52,6 +52,7 @@ class _LocationState extends State<Location> {
         setState(() {
           cordinates='Location Permission Denied Forever';
         });
+        return ;
       }
 
 
