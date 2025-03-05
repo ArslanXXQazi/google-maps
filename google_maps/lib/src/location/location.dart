@@ -25,7 +25,9 @@ class _LocationState extends State<Location> {
 
     if(!serviceEnable)
       {
-       // _cordinates="blbvcjklbvsjkvb";
+      setState(() {
+        // _cordinates="blbvcjklbvsjkvb";
+      });
       }
 
 
