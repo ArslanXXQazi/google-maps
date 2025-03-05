@@ -31,6 +31,10 @@ class _LocationState extends State<Location> {
       return;
       }
 
+    permission= await Geolocator.checkPermission();
+    
+
+
 
   }
 
