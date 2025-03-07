@@ -14,6 +14,7 @@ class _LocationState extends State<Location> {
   String placeName="";
   String locality="";
   String adminstrativeArea="";
+  String country="";
   String cordinates='';
   double lat=0;
   double long=0;
@@ -79,7 +80,12 @@ class _LocationState extends State<Location> {
             List<Placemark> placemark= await placemarkFromCoordinates(lat, long);
             if(placemark.isNotEmpty)
               {
-
+                setState(() {
+                  placemark=placemark[0].name??"";
+                  placemark=placemark[0].locality??"";
+                  placemark=placemark[0].administrativeArea??"";
+                  placemark=placemark[0].country??"";
+                });
               }
           }
           catch(e){
