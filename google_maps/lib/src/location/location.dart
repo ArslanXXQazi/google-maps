@@ -62,6 +62,11 @@ class _LocationState extends State<Location> {
       desiredAccuracy: LocationAccuracy.high,);
 
     setState(() {
+      lat=position.latitude;
+      long=position.longitude;
+      cordinates ='Let : ${position.latitude}, lan : ${position.longitude}';
+    });
+
 
 
   }
