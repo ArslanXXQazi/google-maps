@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 
@@ -71,7 +72,14 @@ class _LocationState extends State<Location> {
 
     Future<void> _getLocationNames(double lat, double long) async
     {
-      
+      try
+          {
+            List<Placemark> placemark= await placemarkFromCoordinates(lat, long);
+            
+          }
+          catch(e){
+
+          }
     }
 
 
