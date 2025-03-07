@@ -12,6 +12,8 @@ class Location extends StatefulWidget {
 
 class _LocationState extends State<Location> {
   String placeName="";
+  String locality="";
+  String locality="";
   String cordinates='';
   double lat=0;
   double long=0;
