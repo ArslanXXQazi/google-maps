@@ -66,7 +66,9 @@ class _LocationState extends State<Location> {
       long=position.longitude;
       cordinates ='Let : ${position.latitude}, lan : ${position.longitude}';
     });
-    
+
+    await _getLocationNames( double lat ,double long);
+
   }
 
 
