@@ -11,7 +11,7 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-
+  String placeName="";
   String cordinates='';
   double lat=0;
   double long=0;
@@ -77,7 +77,7 @@ class _LocationState extends State<Location> {
             List<Placemark> placemark= await placemarkFromCoordinates(lat, long);
             if(placemark.isNotEmpty)
               {
-                
+
               }
           }
           catch(e){
