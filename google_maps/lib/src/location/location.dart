@@ -50,14 +50,6 @@ class _LocationState extends State<Location> {
           }
       }
 
-    if(permission== LocationPermission.deniedForever)
-      {
-        setState(() {
-          cordinates='Location Permission Denied Forever';
-        });
-        return ;
-      }
-
     Position position= await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,);
 
