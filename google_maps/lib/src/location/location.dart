@@ -75,7 +75,10 @@ class _LocationState extends State<Location> {
       try
           {
             List<Placemark> placemark= await placemarkFromCoordinates(lat, long);
-            
+            if(placemark.isNotEmpty)
+              {
+                
+              }
           }
           catch(e){
 
