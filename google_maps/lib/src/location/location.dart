@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
-
 class Location extends StatefulWidget {
   const Location({super.key});
 
@@ -11,141 +10,141 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-  String placeName="";
-  String locality="";
-  String adminstrativeArea="";
-  String country="";
-  String cordinates='';
-  double lat=0;
-  double long=0;
+  String placeName = "";
+  String locality = "";
+  String administrativeArea = "";
+  String country = "";
+  String coordinates = '';
+  double lat = 0;
+  double long = 0;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _currentLocation();
   }
 
-  Future<void> _currentLocation ()async
-  {
-    bool serviceEnable;
+  Future<void> _currentLocation() async {
+    bool serviceEnabled;
     LocationPermission permission;
 
-    serviceEnable = await Geolocator.isLocationServiceEnabled();
-
-    if(!serviceEnable)
-      {
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
       setState(() {
-        // _cordinates="blbvcjklbvsjkvb";
+        coordinates = 'Location services are disabled.';
       });
       return;
-      }
-
-    permission= await Geolocator.checkPermission();
-    if(permission==LocationPermission.denied)
-      {
-        permission= await Geolocator.requestPermission();
-        if(permission==LocationPermission.denied)
-          {
-            setState(() {
-              cordinates='Location Perimission Denied';
-            });
-            return;
-          }
-      }
-
-    if(permission== LocationPermission.deniedForever)
-      {
-        setState(() {
-          cordinates='Location Permission Denied Forever';
-        });
-        return ;
-      }
-
-    Position position= await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,);
-
-    setState(() {
-      lat=position.latitude;
-      long=position.longitude;
-      cordinates ='Let : ${position.latitude}, lan : ${position.longitude}';
-    });
-
-
-
-
-    Future<void> _getLocationNames(double lat, double long) async
-    {
-      try
-          {
-            List<Placemark> placemark= await placemarkFromCoordinates(lat, long);
-            if(placemark.isNotEmpty)
-              {
-                setState(() {
-                  placeName = placemark[0].name ?? "";
-                  locality = placemark[0].locality ?? "";
-                  adminstrativeArea = placemark[0].administrativeArea ?? "";
-                  country = placemark[0].country ?? "";
-                });
-              }
-          }
-          catch(e){
-        placeName='Error';
-        locality='Error';
-        adminstrativeArea='Error';
-        country='Error';
-          }
     }
 
-    await _getLocationNames( position.longitude, position.latitude);
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        setState(() {
+          coordinates = 'Location Permission Denied';
+        });
+        return;
+      }
+    }
 
+    if (permission == LocationPermission.deniedForever) {
+      setState(() {
+        coordinates = 'Location Permission Denied Forever';
+      });
+      return;
+    }
 
+    Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+
+    setState(() {
+      lat = position.latitude;
+      long = position.longitude;
+      coordinates = 'Lat: ${position.latitude}, Lng: ${position.longitude}';
+    });
 
   }
 
+  await _getLocationNames(position.latitude, position.longitude);
 
+  Future<void> _getLocationNames(double lat, double long) async {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
+      if (placemarks.isNotEmpty) {
+        setState(() {
+          placeName = placemarks[0].name ?? "";
+          locality = placemarks[0].locality ?? "";
+          administrativeArea = placemarks[0].administrativeArea ?? "";
+          country = placemarks[0].country ?? "";
+        });
+      }
+    } catch (e) {
+      print("Error: $e");
+      setState(() {
+        placeName = 'Error';
+        locality = 'Error';
+        administrativeArea = 'Error';
+        country = 'Error';
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('GeoLocator Example'),
         centerTitle: true,
       ),
-      body: Column(children: [
-        
-        Text(
-            "Place : $placeName",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Coordinates: $coordinates",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              "Place: $placeName",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              "Locality: $locality",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              "Administrative Area: $administrativeArea",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              "Country: $country",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
-        Text(
-            "Locality : $locality",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-        Text(
-            "Adminstrative Area : $adminstrativeArea",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-        Text(
-            "Country : $country",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-
-      ],),
+      ),
     );
   }
 }
