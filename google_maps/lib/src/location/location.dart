@@ -106,6 +106,10 @@ class _LocationState extends State<Location> {
       ),
       body: Column(children: [
         
+        Text(
+            "Place : $placeName"
+        )
+        
       ],),
     );
   }
