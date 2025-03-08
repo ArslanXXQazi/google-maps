@@ -127,6 +127,7 @@ class _LocationState extends State<Location> {
                 color: Colors.black,
               ),
             ),
+            SizedBox(height: 30,),
             Text(
               "Administrative Area: $administrativeArea",
               style: TextStyle(
