@@ -70,9 +70,7 @@ class _LocationState extends State<Location> {
       long=position.longitude;
       cordinates ='Let : ${position.latitude}, lan : ${position.longitude}';
     });
-
-    await _getLocationNames( position.longitude, position.latitude);
-
+    
     Future<void> _getLocationNames(double lat, double long) async
     {
       try
