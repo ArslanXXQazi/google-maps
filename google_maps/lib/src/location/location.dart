@@ -107,7 +107,12 @@ class _LocationState extends State<Location> {
       body: Column(children: [
         
         Text(
-            "Place : $placeName"
+            "Place : $placeName",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
         )
         
       ],),
