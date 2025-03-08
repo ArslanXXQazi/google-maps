@@ -104,7 +104,9 @@ class _LocationState extends State<Location> {
         title: Text('GeoLocator Example'),
         centerTitle: true,
       ),
-      
+      body: Column(children: [
+        
+      ],),
     );
   }
 }
