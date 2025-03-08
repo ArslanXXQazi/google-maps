@@ -130,6 +130,14 @@ class _LocationState extends State<Location> {
             color: Colors.black,
           ),
         ),
+        Text(
+            "Country : $country",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
 
       ],),
     );
