@@ -113,8 +113,16 @@ class _LocationState extends State<Location> {
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
-        )
-        
+        ),
+        Text(
+            "Locality : $locality",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+
       ],),
     );
   }
