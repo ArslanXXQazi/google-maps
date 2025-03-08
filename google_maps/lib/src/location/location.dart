@@ -64,9 +64,8 @@ class _LocationState extends State<Location> {
       coordinates = 'Lat: ${position.latitude}, Lng: ${position.longitude}';
     });
 
+    await _getLocationNames(position.latitude, position.longitude);
   }
-
-  await _getLocationNames(position.latitude, position.longitude);
 
   Future<void> _getLocationNames(double lat, double long) async {
     try {
@@ -105,7 +104,7 @@ class _LocationState extends State<Location> {
             Text(
               "Coordinates: $coordinates",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -113,7 +112,7 @@ class _LocationState extends State<Location> {
             Text(
               "Place: $placeName",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -121,7 +120,7 @@ class _LocationState extends State<Location> {
             Text(
               "Locality: $locality",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -129,7 +128,7 @@ class _LocationState extends State<Location> {
             Text(
               "Administrative Area: $administrativeArea",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -137,7 +136,7 @@ class _LocationState extends State<Location> {
             Text(
               "Country: $country",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
