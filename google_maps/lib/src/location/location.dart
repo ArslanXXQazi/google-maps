@@ -136,6 +136,7 @@ class _LocationState extends State<Location> {
                 color: Colors.black,
               ),
             ),
+            SizedBox(height: 30,),
             Text(
               "Country: $country",
               style: TextStyle(
