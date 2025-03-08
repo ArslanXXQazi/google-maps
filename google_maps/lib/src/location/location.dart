@@ -70,7 +70,10 @@ class _LocationState extends State<Location> {
       long=position.longitude;
       cordinates ='Let : ${position.latitude}, lan : ${position.longitude}';
     });
-    
+
+
+
+
     Future<void> _getLocationNames(double lat, double long) async
     {
       try
@@ -79,10 +82,10 @@ class _LocationState extends State<Location> {
             if(placemark.isNotEmpty)
               {
                 setState(() {
-                  placemark=placemark[0].name??"";
-                  placemark=placemark[0].locality??"";
-                  placemark=placemark[0].administrativeArea??"";
-                  placemark=placemark[0].country??"";
+                  placeName = placemark[0].name ?? "";
+                  locality = placemark[0].locality ?? "";
+                  adminstrativeArea = placemark[0].administrativeArea ?? "";
+                  country = placemark[0].country ?? "";
                 });
               }
           }
@@ -90,6 +93,8 @@ class _LocationState extends State<Location> {
 
           }
     }
+
+    await _getLocationNames( position.longitude, position.latitude);
 
 
 
