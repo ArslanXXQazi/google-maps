@@ -90,7 +90,10 @@ class _LocationState extends State<Location> {
               }
           }
           catch(e){
-
+        placeName='Error';
+        locality='Error';
+        adminstrativeArea='Error';
+        country='Error';
           }
     }
 
