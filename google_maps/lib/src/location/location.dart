@@ -101,6 +101,7 @@ class _LocationState extends State<Location> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 30,),
             Text(
               "Coordinates: $coordinates",
               style: TextStyle(
