@@ -102,11 +102,7 @@ class _LocationState extends State<Location> {
         title: Text('GeoLocator Example'),
         centerTitle: true,
       ),
-       body: GoogleMap(
-         initialCameraPosition: CameraPosition(
-           target: LatLng(lat!, long!)
-         ),
-       )
+       body: lat==null || long==null
       // Padding(
       //   padding: const EdgeInsets.symmetric(horizontal: 20),
       //   child: Column(
