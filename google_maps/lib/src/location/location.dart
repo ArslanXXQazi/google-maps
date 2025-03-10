@@ -103,7 +103,7 @@ class _LocationState extends State<Location> {
         centerTitle: true,
       ),
        body: GoogleMap(
-
+         initialCameraPosition: cameraPosition,
        )
       // Padding(
       //   padding: const EdgeInsets.symmetric(horizontal: 20),
