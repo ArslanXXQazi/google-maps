@@ -16,8 +16,8 @@ class _LocationState extends State<Location> {
   String administrativeArea = "";
   String country = "";
   String coordinates = '';
-  double lat = 0;
-  double long = 0;
+  double? lat;
+  double? long;
 
   @override
   void initState() {
