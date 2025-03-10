@@ -90,7 +90,10 @@ class _LocationState extends State<Location> {
     }
   }
 
-  CameraPosition cameraPosition=CameraPosition(target: LatLng(lat, long));
+  CameraPosition cameraPosition=CameraPosition(target: LatLng(lat, long),
+      zoom: 14,
+  );
+
 
   @override
   Widget build(BuildContext context) {
