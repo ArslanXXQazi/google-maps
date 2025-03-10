@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Location extends StatefulWidget {
   const Location({super.key});
@@ -89,6 +90,8 @@ class _LocationState extends State<Location> {
     }
   }
 
+  CameraPosition cameraPosition=CameraPosition(target: LatLng(lat, long));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,59 +99,62 @@ class _LocationState extends State<Location> {
         title: Text('GeoLocator Example'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 30,),
-            Text(
-              "Coordinates: $coordinates",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Place: $placeName",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Locality: $locality",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Administrative Area: $administrativeArea",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Country: $country",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
-      ),
+       body: GoogleMap(
+
+       )
+      // Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 20),
+      //   child: Column(
+      //     crossAxisAlignment: CrossAxisAlignment.start,
+      //     children: [
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Coordinates: $coordinates",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Place: $placeName",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Locality: $locality",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Administrative Area: $administrativeArea",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Country: $country",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
