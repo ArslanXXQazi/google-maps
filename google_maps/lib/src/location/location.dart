@@ -90,9 +90,9 @@ class _LocationState extends State<Location> {
     }
   }
 
-  CameraPosition cameraPosition=CameraPosition(target: LatLng(lat, long),
-      zoom: 14,
-  );
+  //  final CameraPosition  cameraPosition= CameraPosition(target: LatLng(lat, long),
+  //     zoom: 14,
+  // );
 
 
   @override
@@ -103,7 +103,9 @@ class _LocationState extends State<Location> {
         centerTitle: true,
       ),
        body: GoogleMap(
-         initialCameraPosition: cameraPosition,
+         initialCameraPosition: CameraPosition(
+           target: LatLng(lat!, long!)
+         ),
        )
       // Padding(
       //   padding: const EdgeInsets.symmetric(horizontal: 20),
