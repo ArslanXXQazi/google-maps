@@ -114,7 +114,7 @@ class _LocationState extends State<Location> {
                title: "Current Location"
              )
            ),
-           Marker(markerId: MarkerId('1'),
+           Marker(markerId: MarkerId('2'),
              position: LatLng(34.0151, 71.5249),
              infoWindow: InfoWindow(
                title: "Current Location"
