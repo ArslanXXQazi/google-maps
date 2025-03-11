@@ -114,6 +114,12 @@ class _LocationState extends State<Location> {
                title: "Current Location"
              )
            ),
+           Marker(markerId: MarkerId('1'),
+             position: LatLng(34.0151, 71.5249),
+             infoWindow: InfoWindow(
+               title: "Current Location"
+             )
+           ),
 
          ]),
          onMapCreated: (GoogleMapController controller ){
