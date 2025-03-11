@@ -109,8 +109,12 @@ class _LocationState extends State<Location> {
        GoogleMap(
          markers: Set.of([
            Marker(markerId: MarkerId('1'),
-             position: LatLng(lat!, long!)
-           )
+             position: LatLng(lat!, long!),
+             infoWindow: InfoWindow(
+               title: "Current Location"
+             )
+           ),
+
          ]),
          onMapCreated: (GoogleMapController controller ){
            completer.complete(controller);
