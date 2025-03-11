@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -101,11 +102,13 @@ class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text('GeoLocator Example'),
         centerTitle: true,
       ),
-       body: lat==null || long==null? Center(child: ):
+       body: lat==null || long==null? Center(child: CupertinoActivityIndicator(color: Colors.green,radius: 30,)):
        GoogleMap(
          markers: Set.of([
            Marker(markerId: MarkerId('1'),
