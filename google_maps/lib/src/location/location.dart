@@ -107,7 +107,9 @@ class _LocationState extends State<Location> {
       ),
        body: lat==null || long==null? Center(child: Text('Fetching Current Location'),):
        GoogleMap(
-         markers: ,
+         markers: Set.of([
+           
+         ]),
          onMapCreated: (GoogleMapController controller ){
            completer.complete(controller);
          },
