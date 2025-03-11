@@ -106,7 +106,7 @@ class _LocationState extends State<Location> {
        GoogleMap(
          initialCameraPosition: CameraPosition(
              target: LatLng(lat!, long!),
-            zoom: 14,
+            zoom: 15,
          ),
        )
       // Padding(
