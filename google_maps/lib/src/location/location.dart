@@ -112,7 +112,7 @@ class _LocationState extends State<Location> {
          },
          initialCameraPosition: CameraPosition(
              target: LatLng(lat!, long!),
-            zoom: 15,
+            zoom: 14,
          ),
        )
       // Padding(
