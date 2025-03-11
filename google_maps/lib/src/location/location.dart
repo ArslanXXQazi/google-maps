@@ -108,7 +108,7 @@ class _LocationState extends State<Location> {
        body: lat==null || long==null? Center(child: Text('Fetching Current Location'),):
        GoogleMap(
          onMapCreated: (GoogleMapController controller ){
-           
+           completer.complete(controller);
          },
          initialCameraPosition: CameraPosition(
              target: LatLng(lat!, long!),
