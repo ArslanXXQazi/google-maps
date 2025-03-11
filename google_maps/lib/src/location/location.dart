@@ -105,7 +105,7 @@ class _LocationState extends State<Location> {
         title: Text('GeoLocator Example'),
         centerTitle: true,
       ),
-       body: lat==null || long==null? Center(child: Text('Fetching Current Location'),):
+       body: lat==null || long==null? Center(child: ):
        GoogleMap(
          markers: Set.of([
            Marker(markerId: MarkerId('1'),
