@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -94,6 +96,7 @@ class _LocationState extends State<Location> {
   //     zoom: 14,
   // );
 
+  Completer<GoogleMapController> completer=Completer();
 
   @override
   Widget build(BuildContext context) {
