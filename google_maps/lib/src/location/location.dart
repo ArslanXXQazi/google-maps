@@ -71,7 +71,8 @@ class _LocationState extends State<Location> {
     await _getLocationNames(position.latitude, position.longitude);
   }
 
-  Future<void> _getLocationNames(double lat, double long) async {
+  Future<void> _getLocationNames(double lat, double long) async
+  {
     try {
       List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
       if (placemarks.isNotEmpty) {

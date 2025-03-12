@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -11,8 +12,10 @@ class UserCurrentLocation extends StatefulWidget {
 
 class _UserCurrentLocationState extends State<UserCurrentLocation> {
   @override
+  String streetAdress='0';
   GoogleMapController? googleMapController;
   Set<Marker> _marker={};
+
   static CameraPosition _initialCameraPosition=CameraPosition(target: LatLng(33.6844, 73.0479),zoom: 14);
 
   Future<Position> userCurrentLocation () async
@@ -24,6 +27,23 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
     });
 
     return await Geolocator.getCurrentPosition();
+  }
+
+  Future<void> _getLocationNames(double lat, double long) async
+  {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
+      if (placemarks.isNotEmpty) {
+        setState(() {
+          streetAdress = placemarks[0].street ?? "";
+        });
+      }
+    } catch (e) {
+      print("Error: $e");
+      setState(() {
+
+      });
+    }
   }
 
   Widget build(BuildContext context) {
@@ -39,11 +59,15 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
                 markerId: MarkerId('1'),
                 position: userlatLng,
                 infoWindow: InfoWindow(
-                  title: "Arslan Qazi"
+                  title: "$streetAdress"
                 )
               )
             );
           });
+
+          googleMapController!.animateCamera(
+            CameraUpdate.newLatLngZoom(userlatLng, 13),
+          );
 
         },child: Icon(Icons.location_on),),
 
@@ -54,6 +78,7 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
          onMapCreated: (GoogleMapController controller){
             googleMapController=controller;
          },
+        zoomControlsEnabled: false,
       ),
 
     );
