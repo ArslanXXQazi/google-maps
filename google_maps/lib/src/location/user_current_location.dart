@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class UserCurrentLocation extends StatefulWidget {
@@ -13,6 +14,17 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
   GoogleMapController? googleMapController;
   Set<Marker> _marker={};
   static CameraPosition _initialCameraPosition=CameraPosition(target: LatLng(33.6844, 73.0479),zoom: 14);
+
+  Future<Position> userCurrentLocation () async
+  {
+    await Geolocator.requestPermission().
+    then((value){}).
+    catchError((error){
+      print("Error $error");
+    });
+
+    return await Geolocator.getCurrentPosition();
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
