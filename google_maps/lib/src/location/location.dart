@@ -28,7 +28,8 @@ class _LocationState extends State<Location> {
     _currentLocation();
   }
 
-  Future<void> _currentLocation() async {
+  Future<void> _currentLocation() async
+  {
     bool serviceEnabled;
     LocationPermission permission;
 

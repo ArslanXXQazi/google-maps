@@ -35,7 +35,7 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
       List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
       if (placemarks.isNotEmpty) {
         setState(() {
-          streetAdress = placemarks[0].street ?? "";
+          streetAdress = placemarks[0].locality ?? "";
         });
       }
     } catch (e) {
@@ -52,6 +52,7 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
         onPressed: () async {
           Position position = await userCurrentLocation();
           LatLng userlatLng=LatLng(position.latitude, position.longitude);
+          await _getLocationNames(position.latitude, position.longitude);
 
           setState(() {
             _marker.add(
@@ -61,7 +62,7 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
                 infoWindow: InfoWindow(
                   title: "$streetAdress"
                 )
-              )
+              ),
             );
           });
 
@@ -69,7 +70,10 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
             CameraUpdate.newLatLngZoom(userlatLng, 13),
           );
 
-        },child: Icon(Icons.location_on),),
+        },
+        child: Icon(Icons.location_on,color: Colors.white,),
+        backgroundColor: Colors.blue,
+      ),
 
 
       body: GoogleMap(
