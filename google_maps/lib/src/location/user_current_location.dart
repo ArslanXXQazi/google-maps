@@ -32,7 +32,14 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
         onPressed: () async {
           Position position = await userCurrentLocation();
           LatLng latLng=LatLng(position.latitude, position.longitude);
+
+          setState(() {
+            _marker.add(value)
+          });
+
         },child: Icon(Icons.location_on),),
+
+
       body: GoogleMap(
           initialCameraPosition: _initialCameraPosition,
           markers: _marker,
