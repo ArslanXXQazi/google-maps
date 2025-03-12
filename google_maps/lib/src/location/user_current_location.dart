@@ -31,10 +31,18 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           Position position = await userCurrentLocation();
-          LatLng latLng=LatLng(position.latitude, position.longitude);
+          LatLng userlatLng=LatLng(position.latitude, position.longitude);
 
           setState(() {
-            _marker.add(value)
+            _marker.add(
+              Marker(
+                markerId: MarkerId('1'),
+                position: userlatLng,
+                infoWindow: InfoWindow(
+                  title: "Arslan Qazi"
+                )
+              )
+            );
           });
 
         },child: Icon(Icons.location_on),),
