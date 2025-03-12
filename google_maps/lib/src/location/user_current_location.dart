@@ -31,6 +31,7 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           Position position = await userCurrentLocation();
+          LatLng latLng=LatLng(position.latitude, position.longitude);
         },child: Icon(Icons.location_on),),
       body: GoogleMap(
           initialCameraPosition: _initialCameraPosition,
