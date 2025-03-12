@@ -28,7 +28,10 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.location_on),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          Position position = await userCurrentLocation();
+        },child: Icon(Icons.location_on),),
       body: GoogleMap(
           initialCameraPosition: _initialCameraPosition,
           markers: _marker,
