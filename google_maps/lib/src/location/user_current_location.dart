@@ -17,7 +17,7 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.location_on),),
       body: GoogleMap(
-          initialCameraPosition: initialCameraPosition
+          initialCameraPosition: _initialCameraPosition
       ),
 
     );
