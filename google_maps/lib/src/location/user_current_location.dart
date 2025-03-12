@@ -20,6 +20,9 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
       body: GoogleMap(
           initialCameraPosition: _initialCameraPosition,
           markers: _marker,
+         onMapCreated: (GoogleMapController controller){
+            googleMapController=controller;
+         },
       ),
 
     );
