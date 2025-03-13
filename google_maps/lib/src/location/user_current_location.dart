@@ -35,7 +35,7 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
       List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
       if (placemarks.isNotEmpty) {
         setState(() {
-          streetAdress = placemarks[0].locality ?? "";
+          streetAdress = placemarks[0].subLocality ?? "";
         });
       }
     } catch (e) {
@@ -74,8 +74,6 @@ class _UserCurrentLocationState extends State<UserCurrentLocation> {
         child: Icon(Icons.location_on,color: Colors.white,),
         backgroundColor: Colors.blue,
       ),
-
-
       body: GoogleMap(
           initialCameraPosition: _initialCameraPosition,
           markers: _marker,
