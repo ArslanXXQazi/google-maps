@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CustomMarkers extends StatefulWidget {
   const CustomMarkers({super.key});
@@ -23,7 +24,11 @@ class _CustomMarkersState extends State<CustomMarkers> {
     'assets/bike5.png',
   ];
 
-  
+  List<Marker> markers =[];
+
+  List<LatLng> cordinates=[
+    LatLng(2323, 2324),
+  ];
 
   Widget build(BuildContext context) {
     return Scaffold(
