@@ -59,13 +59,13 @@ class _CustomMarkersState extends State<CustomMarkers> {
   }
 
 
-  static CameraPosition initialCameraPosition= CameraPosition(target: (LatLng(24.8607, 67.0011)));
+  static CameraPosition initialCameraPosition= CameraPosition(target: (LatLng(24.8607, 67.0011)),zoom: 14);
 
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
         markers: Set<Marker>.of(markers),
-          initialCameraPosition: ,
+          initialCameraPosition:initialCameraPosition,
         onMapCreated: ,
       ),
     );
