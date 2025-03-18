@@ -38,7 +38,6 @@ class _CustomMarkersState extends State<CustomMarkers> {
     LatLng(25.3960, 68.3773),
     LatLng(32.4927, 74.5313),
 
-
   ];
 
   loadData (){
@@ -58,6 +57,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
       }
 
   }
+
+
+  static CameraPosition initialCameraPosition= CameraPosition(target: (LatLng(24.8607, 67.0011)));
 
   Widget build(BuildContext context) {
     return Scaffold(
