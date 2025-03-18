@@ -39,9 +39,15 @@ class _CustomMarkersState extends State<CustomMarkers> {
     LatLng(2323, 2324),
   ];
 
+  loadData (){
+
+    
+
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
     );
   }
 }
