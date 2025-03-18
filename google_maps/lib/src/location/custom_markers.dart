@@ -41,7 +41,10 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
   loadData (){
 
-    for( int start=0;  )
+    for( int start=0; start < markerImages.length; start++ )
+      {
+        
+      }
 
   }
 
