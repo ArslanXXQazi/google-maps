@@ -45,7 +45,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
       {
 
         markers.add(
-          Marker(markerId: MarkerId(start.toString()),
+          Marker(
+            icon: BitmapDescriptor.defaultMarker,
+              markerId: MarkerId(start.toString()),
             infoWindow: InfoWindow(
               title: "Position : $start"
             )
