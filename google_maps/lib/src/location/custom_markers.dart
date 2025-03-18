@@ -61,7 +61,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
-          initialCameraPosition: 
+        markers: Set<Marker>.of(markers),
+          initialCameraPosition: ,
+        onMapCreated: ,
       ),
     );
   }
