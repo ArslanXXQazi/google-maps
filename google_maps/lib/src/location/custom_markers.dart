@@ -9,6 +9,11 @@ class CustomMarkers extends StatefulWidget {
 
 class _CustomMarkersState extends State<CustomMarkers> {
   @override
+
+  List<String> markerImages=[
+    
+  ];
+
   Widget build(BuildContext context) {
     return Scaffold(
 
