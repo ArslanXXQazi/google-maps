@@ -28,6 +28,15 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
   List<LatLng> cordinates=[
     LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
+    LatLng(2323, 2324),
   ];
 
   Widget build(BuildContext context) {
