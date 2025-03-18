@@ -83,6 +83,7 @@ class _LocationState extends State<Location> {
           locality = placemarks[0].locality ?? "";
           administrativeArea = placemarks[0].administrativeArea ?? "";
           country = placemarks[0].country ?? "";
+          subLocality = placemarks[0].subLocality ?? "";
         });
       }
     } catch (e) {
@@ -92,6 +93,7 @@ class _LocationState extends State<Location> {
         locality = 'Error';
         administrativeArea = 'Error';
         country = 'Error';
+        subLocality = 'Error';
       });
     }
   }
