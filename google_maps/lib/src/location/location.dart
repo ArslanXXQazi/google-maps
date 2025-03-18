@@ -18,6 +18,7 @@ class _LocationState extends State<Location> {
   String locality = "";
   String administrativeArea = "";
   String country = "";
+  String subLocality = "";
   String coordinates = '';
   double? lat;
   double? long;
@@ -152,7 +153,7 @@ class _LocationState extends State<Location> {
             ),
             SizedBox(height: 30,),
             Text(
-              "Place: $placeName",
+              "Place:  $placeName",
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
@@ -161,7 +162,7 @@ class _LocationState extends State<Location> {
             ),
             SizedBox(height: 30,),
             Text(
-              "Locality: $locality",
+              "Locality:   $locality",
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
