@@ -21,8 +21,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
     'assets/bike3.png',
     'assets/bike4.png',
     'assets/bike5.png',
-
   ];
+
+  
 
   Widget build(BuildContext context) {
     return Scaffold(
