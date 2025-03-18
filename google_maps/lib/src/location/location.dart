@@ -180,6 +180,15 @@ class _LocationState extends State<Location> {
             ),
             SizedBox(height: 30,),
             Text(
+              "Administrative Area:   $administrativeArea",
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            SizedBox(height: 30,),
+            Text(
               "Country:  $country",
               style: TextStyle(
                 fontSize: 15,
