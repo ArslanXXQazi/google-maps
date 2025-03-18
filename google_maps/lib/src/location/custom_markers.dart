@@ -42,6 +42,13 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
   ];
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    loadData();
+  }
+
   loadData (){
 
     for( int start=0; start < markerImages.length; start++ )
@@ -56,6 +63,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
             )
           ),
         );
+        setState(() {
+          
+        });
       }
 
   }
