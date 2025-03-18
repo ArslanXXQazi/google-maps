@@ -110,7 +110,7 @@ class _LocationState extends State<Location> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('GeoLocator Example'),
+        title: Text('GeoLocator Example',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 18),),
         centerTitle: true,
       ),
        body:
