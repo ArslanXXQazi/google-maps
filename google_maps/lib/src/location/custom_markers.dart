@@ -11,6 +11,8 @@ class CustomMarkers extends StatefulWidget {
 class _CustomMarkersState extends State<CustomMarkers> {
   @override
 
+  GoogleMapController? googleMapController;
+
   List<String> markerImages=[
     'assets/car1.png',
     'assets/car2.png',
@@ -66,7 +68,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
       body: GoogleMap(
         markers: Set<Marker>.of(markers),
           initialCameraPosition:initialCameraPosition,
-        onMapCreated: ,
+        onMapCreated: (GoogleMapController controller){
+          googleMapController=controller;
+        },
       ),
     );
   }
