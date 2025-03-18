@@ -16,6 +16,11 @@ class _CustomMarkersState extends State<CustomMarkers> {
     'assets/car3.png',
     'assets/car4.png',
     'assets/car5.png',
+    'assets/bike1.png',
+    'assets/bike2.png',
+    'assets/bike3.png',
+    'assets/bike4.png',
+    'assets/bike5.png',
 
   ];
 
