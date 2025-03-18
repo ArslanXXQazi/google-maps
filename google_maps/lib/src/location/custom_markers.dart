@@ -43,7 +43,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
     for( int start=0; start < markerImages.length; start++ )
       {
-        
+        markers.add(
+
+        );
       }
 
   }
