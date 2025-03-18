@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps/src/location/custom_markers.dart';
 import 'package:google_maps/src/location/location.dart';
 import 'package:google_maps/src/location/user_current_location.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: //UserCurrentLocation()
-      Location(),
+     // Location(),
+      CustomMarkers(),
     );
   }
 }
