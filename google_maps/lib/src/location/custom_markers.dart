@@ -11,7 +11,12 @@ class _CustomMarkersState extends State<CustomMarkers> {
   @override
 
   List<String> markerImages=[
-    
+    'assets/car1.png',
+    'assets/car2.png',
+    'assets/car3.png',
+    'assets/car4.png',
+    'assets/car5.png',
+
   ];
 
   Widget build(BuildContext context) {
