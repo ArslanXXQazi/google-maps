@@ -60,7 +60,9 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-
+      body: GoogleMap(
+          initialCameraPosition: 
+      ),
     );
   }
 }
