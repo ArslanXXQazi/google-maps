@@ -114,93 +114,93 @@ class _LocationState extends State<Location> {
         centerTitle: true,
       ),
        body:
-       // lat==null || long==null? Center(child: CupertinoActivityIndicator(color: Colors.green,radius: 30,)):
-       // GoogleMap(
-       //   markers: Set.of([
-       //     Marker(markerId: MarkerId('1'),
-       //       position: LatLng(lat!, long!),
-       //       infoWindow: InfoWindow(
-       //         title: "Current Location"
-       //       )
-       //     ),
-       //     Marker(markerId: MarkerId('2'),
-       //       position: LatLng(34.0151, 71.5249),
-       //       infoWindow: InfoWindow(
-       //         title: "Current Location"
-       //       )
-       //     ),
-       //
-       //   ]),
-       //   onMapCreated: (GoogleMapController controller ){
-       //     completer.complete(controller);
-       //   },
-       //   initialCameraPosition: CameraPosition(
-       //       target: LatLng(lat!, long!),
-       //      zoom: 14,
-       //   ),
-       // )
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 30,),
-            Text(
-              "Coordinates: $coordinates",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Place:  $placeName",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Locality:   $locality",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Administrative Area:   $administrativeArea",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Sub Locality:   $subLocality",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Text(
-              "Country:  $country",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
-      ),
+       lat==null || long==null? Center(child: CupertinoActivityIndicator(color: Colors.green,radius: 30,)):
+       GoogleMap(
+         markers: Set.of([
+           Marker(markerId: MarkerId('1'),
+             position: LatLng(lat!, long!),
+             infoWindow: InfoWindow(
+               title: "Current Location"
+             )
+           ),
+           Marker(markerId: MarkerId('2'),
+             position: LatLng(34.0151, 71.5249),
+             infoWindow: InfoWindow(
+               title: "Current Location"
+             )
+           ),
+
+         ]),
+         onMapCreated: (GoogleMapController controller ){
+           completer.complete(controller);
+         },
+         initialCameraPosition: CameraPosition(
+             target: LatLng(lat!, long!),
+            zoom: 14,
+         ),
+       )
+      // Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 20),
+      //   child: Column(
+      //     crossAxisAlignment: CrossAxisAlignment.start,
+      //     children: [
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Coordinates: $coordinates",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Place:  $placeName",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Locality:   $locality",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Administrative Area:   $administrativeArea",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Sub Locality:   $subLocality",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       SizedBox(height: 30,),
+      //       Text(
+      //         "Country:  $country",
+      //         style: TextStyle(
+      //           fontSize: 15,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
