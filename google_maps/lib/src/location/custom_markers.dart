@@ -1,7 +1,6 @@
-import 'dart:nativewrappers/_internal/vm/lib/typed_data_patch.dart';
 import 'dart:ui';
 import 'dart:ui'as ui;
-
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -54,14 +53,14 @@ class _CustomMarkersState extends State<CustomMarkers> {
     loadData();
   }
 
-  loadData (){
+  loadData () async {
 
     for( int start=0; start < markerImages.length; start++ )
       {
-
+        final Uint8List? markerIcon = await getBytesFromAssets(markerImages[start], 100);
         markers.add(
           Marker(
-            icon: BitmapDescriptor.defaultMarker,
+            icon: BitmapDescriptor.fromBytes(markerIcon),
               markerId: MarkerId(start.toString()),
             infoWindow: InfoWindow(
               title: getCityNames(start)
