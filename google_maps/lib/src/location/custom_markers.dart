@@ -53,25 +53,22 @@ class _CustomMarkersState extends State<CustomMarkers> {
     loadData();
   }
 
-  loadData () async {
+  loadData() async {
+    for (int start = 0; start < markerImages.length; start++) {
+      final Uint8List? markerIcon = await getBytesFromAssets(markerImages[start], 100);
 
-    for( int start=0; start < markerImages.length; start++ )
-      {
-        final Uint8List? markerIcon = await getBytesFromAssets(markerImages[start], 100);
+      if (markerIcon != null) {  // ✅ Good: Null check added
         markers.add(
           Marker(
             icon: BitmapDescriptor.fromBytes(markerIcon),
-              markerId: MarkerId(start.toString()),
-            infoWindow: InfoWindow(
-              title: getCityNames(start)
-            )
+            markerId: MarkerId(start.toString()),
+            position: cordinates[start], // ✅ Good: Position added
+            infoWindow: InfoWindow(title: getCityNames(start)),
           ),
         );
-        setState(() {
-          
-        });
       }
-
+    }
+    setState(() {}); // ✅ Good: setState() only after markers are added
   }
 
   String getCityNames(int index)
