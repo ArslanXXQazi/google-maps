@@ -59,7 +59,7 @@ class _CustomMarkersState extends State<CustomMarkers> {
             icon: BitmapDescriptor.defaultMarker,
               markerId: MarkerId(start.toString()),
             infoWindow: InfoWindow(
-              title: "Position : $start"
+              title: getCityNames(start)
             )
           ),
         );
