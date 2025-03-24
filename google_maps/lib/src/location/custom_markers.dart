@@ -70,9 +70,11 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
   }
 
-  void getCityNames()
+  String getCityNames(int index)
   {
-
+    switch (index){
+      
+    }
   }
 
   static CameraPosition initialCameraPosition= CameraPosition(target: (LatLng(24.8607, 67.0011)),zoom: 14);
