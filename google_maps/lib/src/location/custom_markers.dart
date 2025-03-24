@@ -29,16 +29,16 @@ class _CustomMarkersState extends State<CustomMarkers> {
   List<Marker> markers =[];
 
   List<LatLng> cordinates=[
-    LatLng(24.8607, 67.0011),
-    LatLng(31.5497, 74.3436),
-    LatLng(33.6844, 73.0479),
-    LatLng(33.6007, 73.0679),
-    LatLng(31.4504, 73.1350),
-    LatLng(34.0151, 71.5249),
-    LatLng(30.1798, 66.9750),
-    LatLng(30.1575, 71.5249),
-    LatLng(25.3960, 68.3773),
-    LatLng(32.4927, 74.5313),
+    LatLng(24.8607, 67.0011),  // Karachi
+    LatLng(31.5497, 74.3436),  // Lahore
+    LatLng(33.6844, 73.0479),  // Islamabad
+    LatLng(33.6007, 73.0679),  // Rawalpindi
+    LatLng(31.4504, 73.1350),  // Faisalabad
+    LatLng(34.0151, 71.5249),  // Peshawar
+    LatLng(30.1798, 66.9750),  // Quetta
+    LatLng(30.1575, 71.5249),  // Multan
+    LatLng(25.3960, 68.3773),  // Hyderabad
+    LatLng(32.4927, 74.5313),  // Sialkot
 
   ];
 
@@ -72,7 +72,7 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
   void getCityNames()
   {
-    
+
   }
 
   static CameraPosition initialCameraPosition= CameraPosition(target: (LatLng(24.8607, 67.0011)),zoom: 14);
