@@ -70,6 +70,10 @@ class _CustomMarkersState extends State<CustomMarkers> {
 
   }
 
+  void getCityNames()
+  {
+    
+  }
 
   static CameraPosition initialCameraPosition= CameraPosition(target: (LatLng(24.8607, 67.0011)),zoom: 14);
 
