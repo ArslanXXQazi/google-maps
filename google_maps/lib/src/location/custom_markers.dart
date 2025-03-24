@@ -1,4 +1,9 @@
+import 'dart:nativewrappers/_internal/vm/lib/typed_data_patch.dart';
+import 'dart:ui';
+import 'dart:ui'as ui;
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CustomMarkers extends StatefulWidget {
@@ -96,6 +101,21 @@ class _CustomMarkersState extends State<CustomMarkers> {
       default:
         return "Position: $index";
     }
+  }
+
+
+  Future<Uint8List?> getBytesFromAssets(String path, int width) async {
+
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(
+      data.buffer.asUint8List(),
+      targetWidth: width,
+    );
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))
+        ?.buffer
+        .asUint8List();
+
   }
 
   static CameraPosition initialCameraPosition= CameraPosition(target: (LatLng(24.8607, 67.0011)),zoom: 14);
