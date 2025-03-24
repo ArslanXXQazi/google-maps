@@ -73,7 +73,26 @@ class _CustomMarkersState extends State<CustomMarkers> {
   String getCityNames(int index)
   {
     switch (index){
-      
+      case 0:
+        return "Karachi";
+      case 1:
+        return "Lahore";
+      case 2:
+        return "Islamabad";
+      case 3:
+        return "Rawalpindi";
+      case 4:
+        return "Faisalabad";
+      case 5:
+        return "Peshawar";
+      case 6:
+        return "Quetta";
+      case 7:
+        return "Multan";
+      case 8:
+        return "Hyderabad";
+      case 9:
+        return "Sialkot";
     }
   }
 
