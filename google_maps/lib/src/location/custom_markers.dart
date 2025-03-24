@@ -93,6 +93,8 @@ class _CustomMarkersState extends State<CustomMarkers> {
         return "Hyderabad";
       case 9:
         return "Sialkot";
+      default:
+        return "Position: $index";
     }
   }
 
